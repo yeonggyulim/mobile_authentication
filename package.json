@@ -1,0 +1,7 @@
+{
+  "name": "mobile_authentication",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "yeonggyulim <lyg940128@gmail.com>",
+  "license": "MIT"
+}
