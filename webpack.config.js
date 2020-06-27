@@ -1,11 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 	mode: 'development',
 
-	entry: ['@babel/polyfill', './src/index.js'],
+	entry: ['@babel/polyfill', './src/index.js', './src/sass/main.scss'],
 
 	output: {
 		path: path.resolve(__dirname, 'public'),
@@ -16,6 +17,7 @@ module.exports = {
 
 	plugins: [
 		new CleanWebpackPlugin(),
+		new MiniCssExtractPlugin({ filename: 'style.css' }),
 		new HtmlWebpackPlugin({
 			title: 'Mobile Authentication',
 			filename: './index.html',
@@ -35,6 +37,11 @@ module.exports = {
 						plugins: ['@babel/plugin-proposal-class-properties'],
 					},
 				},
+			},
+			{
+				test: /\.scss$/,
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+				exclude: /node_modules/,
 			},
 		],
 	},
