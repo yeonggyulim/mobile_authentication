@@ -38,4 +38,15 @@ module.exports = {
 			},
 		],
 	},
+
+	devServer: {
+		port: 8000,
+		inline: true,
+		overlay: true,
+		historyApiFallback: true,
+		hot: true,
+		open: true,
+		compress: true,
+		contentBase: path.join(__dirname, 'public'),
+	},
 };
