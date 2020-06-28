@@ -1,0 +1,54 @@
+.auth__template {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background-color: $template-color;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.auth__box {
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.025);
+	padding: 2rem;
+	width: 400px;
+	height: 800px;
+	background-color: white;
+	border-radius: 2px;
+
+	.auth__title {
+		font-weight: bold;
+		font-size: 2rem;
+	}
+
+	.auth__description {
+		font-size: 1em;
+		color: skyblue;
+		margin-bottom: 2rem;
+	}
+
+	.form {
+        margin-bottom: 2rem;
+        height: 5rem;
+
+		.form__text {
+
+        }
+        .form__input {
+            height: 3rem;
+            width: 100%;
+        }
+
+        .form__select {
+            height: 3rem;
+            width: 100%;
+        }
+    }
+    
+    .inquiry {
+        margin-bottom: 2rem;
+    }
+}

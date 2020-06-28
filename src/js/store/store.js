@@ -7,6 +7,7 @@ export default class Store {
 		self.actions = {};
 		self.mutations = {};
 		self.state = {};
+
 		self.status = 'resting';
 
 		self.events = new PubSub();
@@ -42,14 +43,15 @@ export default class Store {
 		let self = this;
 
 		if (typeof self.actions[actionKey] !== 'function') {
-			console.error(`Action "${actionKey}" doesn't exist.`);
+			console.error(`Action "${actionKey} doesn't exist.`);
 			return false;
 		}
 
 		console.groupCollapsed(`ACTION: ${actionKey}`);
 
 		self.status = 'action';
-		self.actions[actionKey](self, paylaod);
+
+		self.actions[actionKey](self, payload);
 
 		console.groupEnd();
 
@@ -60,7 +62,7 @@ export default class Store {
 		let self = this;
 
 		if (typeof self.mutations[mutationKey] !== 'function') {
-			console.log(`Mutation "${mutationKey}" doesnt' exist`);
+			console.log(`Mutation "${mutationKey}" doesn't exist`);
 			return false;
 		}
 
